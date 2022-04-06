@@ -1,0 +1,24 @@
+Experiment No. 2-: Symbol Table Generation
+
+AIM-: Write a program to scan the input program and generate a symbol table.
+
+DESCRIPTION-: Symbol table is a data structure containing a record for each identifier with fields
+for the attributes of the identifier. The attributes may give the information about the Storage allocated
+for the identifier, Data type and Scope of the identifier. By using these records each of the identifiers
+can be retrieved easily and quickly. During the Lexical Analysis the identifiers will be found and
+stored into the Symbol table but the attributes will not be stored in lexical phase. The Compiler and
+the Assembler will be having their own Symbol tables.
+The expression will be given as the input and the output obtained will be containing the table of
+information about the identifiers.
+
+ALGORITHM-:
+1. Start.
+2. Get an expression as input.
+3. Separate each and every token.
+4. If the token is id then create an entry in symbol table and enter the identifier name and its
+corresponding data type.
+5. Check the data type of each identifier and assign the corresponding memory location.
+6. Check whether the identifier is having a value, if so enter that in the symbol table for that
+identifier.
+7. If the token is already entered in the table, avoid repeated entry.
+8. Stop.
