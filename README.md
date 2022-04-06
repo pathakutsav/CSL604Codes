@@ -1,6 +1,10 @@
 # CSL604Codes
 Lab Exercise Programs for Compiler Design Lab CSL604
 ######
+All the folder have respective programs as per the aim of the experiment defined.
+######
+The writeup.txt file in each folder is the writeup for the experiment, including theory and basic explanation along with algorithm, might also be useful in Viva-Voce as a reference.
+######
 # Use as below for executing lex-:
 ######
 touch filename.l
