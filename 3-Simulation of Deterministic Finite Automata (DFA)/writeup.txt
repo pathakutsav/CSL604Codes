@@ -1,0 +1,32 @@
+Experiment No. 3-: Simulation of Deterministic Finite Automata (DFA)
+
+AIM-: To write the program, which simulates the working of a Deterministic Finite Automata (DFA).
+
+DESCRIPTION-: In Theory of Computation, a branch of theoretical computer science, a
+deterministic finite automaton (DFA)—also known as deterministic finite state machine—is a finite
+state machine that accepts/rejects finite strings of symbols and only produces a unique computation
+(or run) of the automaton for each input string.
+A deterministic finite automaton M is a 5-tuple, (Q, Σ, δ, q0, F), consisting of
+• a finite set of states (Q)
+• a finite set of input symbols called the alphabet (Σ)
+• a transition function (δ : Q × Σ → Q)
+• an initial or start state (q0 ∈ Q)
+• a set of accept states (F ⊆ Q)
+
+ALGORITHM-:
+Input: An input string x terminated by an EOF character. A DFA D with start state S0 and set of
+accepting states F.
+
+Output: The answer “yes” if DFA accepts the string; “no” otherwise.
+
+Method:
+1. Start.
+2. s=s0
+3. c=nextchar
+4. while c!=eof
+s=move(s,c);
+c=nextchar;
+5. end if s is in F
+then return “yes”
+else return “no”
+6. Stop.
