@@ -1,0 +1,56 @@
+Experiment No. 6-: Arithmetic Operations using YACC
+
+AIM-: To write a program which separates all the lexemes and groups under the corresponding
+category.
+
+DESCRIPTION-: YACC is a computer program for the Unix operating system. It is a LALR parser
+generator, generating a parser, the part of a compiler that tries to make syntactic sense of the source
+code, specifically a LALR parser, based on an analytic grammar written in a notation similar to BNF.
+YACC is a parser generator. It is to parsers what lex is to scanners. YACC is designed for use with C
+code and generates a parser written in C. The parser is configured for use in conjunction with a lexgenerated scanner and relies on standard shared features (token types, yylval, etc.) and calls the
+function YYLEX as a scanner coroutine.
+You provide a grammar specification file, which is traditionally named using a .y extension. You
+invoke YACC on the .y file and it creates the y.tab.h and y.tab.c files containing a thousand or so lines
+of intense C code that implements an efficient LALR(1) parser for your grammar, including the code
+for the actions you specified.
+The file provides an extern function yyparse.y that will attempt to successfully parse a valid sentence.
+You compile that C file normally, link with the rest of your code, and you have a parser! By default,
+the parser reads from stdin and writes to stdout, just like a lex-generated scanner does.
+% yacc myFile.y creates y.tab.c of C code for parser.
+% gcc -c y.tab.c compiles parser code
+% gcc –o parse y.tab.o lex.yy.o –ll -ly link parser, scanner, libraries
+% parse invokes parser, reads from stdin
+The Makefiles we provide for the projects will execute the above compilation steps for you, but it is
+worthwhile to understand the steps required.
+Your input file is organized as follows (note the intentional similarities to lex):
+%{
+Declarations
+%}
+Definitions
+%%
+Productions
+%%
+User subroutines
+Another way to set precedence is by using the %prec directive.
+When placed at the end of a production with a terminal symbol as its argument, it explicitly sets the
+precedence of the production to the same precedence as that terminal. This can be used when the right
+side has no terminals or when you want to overrule the precedence given by the rightmost terminal.
+Even though it doesn’t seem like a precedence problem, the dangling else ambiguity can be resolved
+using precedence rules. Think carefully about what the conflict is: Identify what the token is that
+could be shifted and the alternate production that could be reduced. What would be the effect of
+choosing the shift? What is the effect of choosing to reduce? Which is the one we want? Using yacc's
+precedence rules, you can force the choice you want by setting the precedence of the token being
+shifted versus the precedence of the rule being reduced. Whichever precedence is higher wins out.
+The precedence of the token is set using the ordinary %left, %right, or %nonassoc directives. The
+precedence of the rule being reduced is determined by the precedence of the rightmost terminal (set
+the same way) or via an explicit %prec directive on the production.
+commands for executing YACC program-:
+yacc filename.y gcc y.tab.c $>> ./a.out
+
+ALGORITHM-:
+1. Start.
+2. Write the yacc specification file and name it as <filename>.y For ex. Program.y
+3. Compile as yacc program.y
+4. Compile the generated file y.tab.c using gcc.
+5. Give the input and get the output.
+6. Stop.
