@@ -1,0 +1,21 @@
+Experiment No. 4-: Simulation of Predictive Parser
+
+AIM-: Write a program to parse a given string using non recursive predictive parsing for a given
+grammar.
+
+DESCRIPTION-: Recursive Descent is a top-down parsing technique that constructs the parse tree
+from the top and the input is read from left to right. It uses procedures for every terminal and nonterminal entity. This parsing technique recursively parses the input to make a parse tree, which may or
+may not require back-tracking. But the grammar associated with it (if not left factored) cannot avoid
+back-tracking. A form of recursive descent parsing that does not require any backtracking is known as
+predictive parsing. This parsing technique is regarded recursive as it uses context free grammar which
+is recursive in nature.
+
+ALGORITHM-:
+1. Start.
+2. set ip to point to the first symbol of w$
+repeat 1 let X be the top stack symbol and the symbol pointed to by ip.
+3. if X is a terminal or 4 then if X = a then pop x from the stack and advance ip else error
+4. else if m[X,a] = X→Y1Y2 … Yk then begin pop X from the stack.
+5. push Yk, Yk-1, … Y1 on to the stack, with Y1 on top.
+6. Output the production X →Y1Y2 … Yk end else error until x = $
+7. Stop.
