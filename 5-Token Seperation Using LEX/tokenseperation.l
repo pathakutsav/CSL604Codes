@@ -12,8 +12,6 @@ int|float|char|double|void printf("%s is a datatype\n",yytext);
 , printf("%s is a separator\n",yytext);
 [#][a-z\.h]+ printf("%s is a preprocessor\n",yytext);
 %%
-COMPILER DESIGN LAB RECORD 18030141CSE033
-Page | 18
 int yywrap(void)
 {
  return 1;
