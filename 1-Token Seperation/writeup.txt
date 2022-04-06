@@ -1,0 +1,30 @@
+Experiment No. 1-: Token Separation
+
+AIM-: To write a program which separates all the lexemes and groups under the corresponding
+category.
+
+DESCRIPTION-: Scanning is the first phase of a compiler in which the source program is read
+character by character and then grouped into various tokens. Token is defined as sequence of
+characters with collective meaning. The various tokens could be identifiers, keywords, operators,
+punctuations, constants, etc. The input is a program written in any high level language and the output
+is stream of tokens. Regular expressions can be used for implementing this token separation.
+During the Lexical analysis phase of the compiler, the source program will be read from left to right
+and get grouped into TOKENS. Tokens can be any one of the following-:
+1.Keywords (if, while, do etc)
+2.identifiers (num, a, b, c etc)
+3.Punctuation Symbols (:,”,’, .,; etc)
+4.operators (+, -, /, *, >, <, = etc)
+The Keywords, Operators and Punctuation symbols should be declared and defined in the character
+array. When the input expression is given each character should be checked and Keywords, Operators,
+Punctuation symbols, Identifiers should be displayed separately in a table format.
+
+ALGORITHM-:
+1. Start.
+2. Get an expression as input.
+3. Separate each and every token.
+4. Check whether they are of keyword or identifiers or punctuations or symbols.
+5. If so save it with necessary information and also with unique identifiers.
+6. If the token is already entered in the table avoid repeated entry.
+7. Else save it with error information.
+8. At the end print the tokens and the category to which they belong in a table format.
+9. Stop.
